@@ -1,8 +1,10 @@
 import Head from "next/head";
+import { useState } from "react";
 import Captcha from "demos-react-captcha";
 import Router from "next/router";
 
-export default function Home() {
+const Home = () => {
+  const [captcha, setCaptcha] = useState(false);
   return (
     <div
       style={{ background: "url('/bg.jpg')", backgroundSize: "cover" }}
@@ -32,7 +34,9 @@ export default function Home() {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              Router.push("/registration");
+              if (captcha) {
+                Router.push("/registration");
+              }
             }}
             className="max-w-md p-5 py-10 mt-5 rounded-lg bg-green-50"
           >
@@ -54,7 +58,7 @@ export default function Home() {
             />
             <div className="flex justify-center mb-4">
               <Captcha
-                onChange={(status) => console.log(status)}
+                onChange={(status) => setCaptcha(status)}
                 onRefresh={(status) => console.log(status)}
                 placeholder="Insert Captcha"
                 length={6}
@@ -91,4 +95,6 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};
+
+export default Home;
