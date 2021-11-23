@@ -49,7 +49,21 @@ const Home = () => {
             </h2>
             <div className="flex">
               <span>
-                <img src="/Profile2.png" className="w-6 h-6 mt-2" alt="" />
+                {/* <img src="/Profile2.png" className="w-6 h-6 mt-2" alt="" /> */}
+
+                <svg
+                  class="h-8 w-8 text-green-700"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
               </span>
               <input
                 type="text"
@@ -59,7 +73,25 @@ const Home = () => {
             </div>
             <div className="flex">
               <span>
-                <img src="/Lock.png" className="w-6 h-6 mt-2" alt="" />
+                {/* <img src="/Lock.png" className="w-6 h-6 mt-2" alt="" /> */}
+
+                <svg
+                  className="h-8 w-8 text-green-700"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  {" "}
+                  <path stroke="none" d="M0 0h24v24H0z" />{" "}
+                  <rect x="5" y="11" width="14" height="10" rx="2" />{" "}
+                  <circle cx="12" cy="16" r="1" />{" "}
+                  <path d="M8 11v-4a4 4 0 0 1 8 0v4" />
+                </svg>
               </span>
               <input
                 type="password"
