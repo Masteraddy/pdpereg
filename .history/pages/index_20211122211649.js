@@ -7,7 +7,7 @@ const Home = () => {
   const [captcha, setCaptcha] = useState(false);
   return (
     <div
-      style={{ background: "url('/bg.png')", backgroundSize: "cover" }}
+      style={{ background: "url('/bg.jpg')", backgroundSize: "cover" }}
       className="flex flex-col items-center justify-center min-h-screen py-2 bg-green-600"
     >
       <Head>
@@ -25,10 +25,10 @@ const Home = () => {
             <p className="text-sm font-bold text-green-50">
               membership management system
             </p>
-            {/* <p className="mt-6 text-2xl font-bold leading-none text-green-50">
+            <p className="mt-6 text-2xl font-bold leading-none text-green-50">
               join the largest <br /> political{" "}
               <span className="text-red-600">party</span> <br /> in nigeria
-            </p> */}
+            </p>
           </div>
         </div>
         <div className="flex flex-col items-center justify-center">
@@ -39,27 +39,29 @@ const Home = () => {
             onSubmit={(e) => {
               e.preventDefault();
               if (captcha) {
-                Router.push("/");
+                Router.push("/registration");
               }
             }}
             className="max-w-md p-5 py-10 mt-5 rounded-lg bg-green-50"
           >
             <h2 className="mb-6 text-xl font-bold text-green-800 uppercase md:hidden">
-              Sign In
+              Sign Up
             </h2>
             <input
               type="text"
-              className="w-60 p-2 mb-4 border-b border-gray-400 text-center uppercase text-sm outline-none focus:bg-green-200"
-              placeholder="Username/Phone Number"
+              className="w-full p-2 mb-4 border-b border-gray-400 outline-none focus:bg-green-200"
+              placeholder="Surname"
             />
             <input
-              type="password"
-              className="w-60 p-2 mb-4 border-b border-gray-400 text-center uppercase text-sm outline-none focus:bg-green-200"
-              placeholder="Password"
+              type="text"
+              className="w-full p-2 mb-4 border-b border-gray-400 outline-none focus:bg-green-200"
+              placeholder="Firstname"
             />
-            <div className="align-baseline text-sm text-green-700 uppercase hover:text-red-600 text-right">
-              <a href="#">Forgot Password?</a>
-            </div>
+            <input
+              type="text"
+              className="w-full p-2 mb-4 border-b border-gray-400 outline-none focus:bg-green-200"
+              placeholder="Othername"
+            />
             <div className="flex justify-center mb-4">
               <Captcha
                 onChange={(status) => setCaptcha(status)}
@@ -79,12 +81,12 @@ const Home = () => {
               join the largest <br /> political{" "}
               <span className="text-red-600">party</span> <br /> in nigeria
             </p> */}
-            <div className="flex flex-wrap justify-center mb-72">
-              <img src="/logo.png" className="w-36" alt="" />
-              <div className="flex flex-col justify-start pl-2 text-4xl font-bold text-white">
+            <div className="flex flex-wrap justify-center mt-36">
+              <img src="/logo.png" className="" alt="" />
+              <div className="flex flex-col justify-start pl-2 text-4xl font-bold text-green-600">
                 <p className="md:text-left">Peoples</p>
                 <p className="md:text-left">Democratic</p>
-                <p className="md:text-left">party</p>
+                <p className="text-red-600 md:text-left">party</p>
               </div>
             </div>
           </div>

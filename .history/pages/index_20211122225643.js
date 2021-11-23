@@ -49,17 +49,14 @@ const Home = () => {
             </h2>
             <input
               type="text"
-              className="w-60 p-2 mb-4 border-b border-gray-400 text-center uppercase text-sm outline-none focus:bg-green-200"
+              className="w-full p-2 mb-4 border-b border-gray-400 outline-none focus:bg-green-200"
               placeholder="Username/Phone Number"
             />
             <input
               type="password"
-              className="w-60 p-2 mb-4 border-b border-gray-400 text-center uppercase text-sm outline-none focus:bg-green-200"
+              className="w-full p-2 mb-4 border-b border-gray-400 outline-none focus:bg-green-200"
               placeholder="Password"
             />
-            <div className="align-baseline text-sm text-green-700 uppercase hover:text-red-600 text-right">
-              <a href="#">Forgot Password?</a>
-            </div>
             <div className="flex justify-center mb-4">
               <Captcha
                 onChange={(status) => setCaptcha(status)}
