@@ -49,7 +49,7 @@ const Home = () => {
             </h2>
             <div className="flex">
               <span>
-                <img src="/profile2.png" className="w-6 h-6 mt-2" alt="" />
+                <img src="/Profile2.png" className="w-6 h-6 mt-2" alt="" />
               </span>
               <input
                 type="text"
@@ -59,7 +59,7 @@ const Home = () => {
             </div>
             <div className="flex">
               <span>
-                <img src="/lock.png" className="w-6 h-6 mt-2" alt="" />
+                <img src="/Lock.png" className="w-6 h-6 mt-2" alt="" />
               </span>
               <input
                 type="password"
