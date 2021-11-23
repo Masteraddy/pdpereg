@@ -101,7 +101,7 @@ const Home = () => {
           </div>
         </div>
       </main>
-      <div className="max-w-lg mt-5 text-xs text-green-800 text-left">
+      <div className="max-w-lg mt-5 text-xs text-green-800 text-center">
         <p>
           <h2 className="font-semibold uppercase text-red-800">Please Note:</h2>
           Please ensure the names entered above are spelt correctly because they
