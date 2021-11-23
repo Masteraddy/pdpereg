@@ -47,16 +47,26 @@ const Home = () => {
             <h2 className="mb-6 text-xl font-bold text-green-800 uppercase md:hidden">
               Sign In
             </h2>
-            <input
-              type="text"
-              className="w-60 p-2 mb-4 border-b border-gray-400 text-center uppercase text-sm outline-none focus:bg-green-200"
-              placeholder="Username/Phone Number"
-            />
-            <input
-              type="password"
-              className="w-60 p-2 mb-4 border-b border-gray-400 text-center uppercase text-sm outline-none focus:bg-green-200"
-              placeholder="Password"
-            />
+            <div className="flex">
+              <span>
+                <img src="/profile2.png" className="w-6 h-6 mt-2" alt="" />
+              </span>
+              <input
+                type="text"
+                className="ml-2 w-60 p-2 mb-4 rounded rounded-xl border-b border-gray-400 text-center uppercase text-sm outline-none focus:bg-green-200"
+                placeholder="Username"
+              />
+            </div>
+            <div className="flex">
+              <span>
+                <img src="/lock.png" className="w-6 h-6 mt-2" alt="" />
+              </span>
+              <input
+                type="password"
+                className="ml-3 w-60 p-2 mb-4 rounded rounded-xl border-b border-gray-400 text-center uppercase text-sm outline-none focus:bg-green-200"
+                placeholder="Password"
+              />
+            </div>
             <div className="align-baseline text-sm text-green-700 uppercase hover:text-red-600 text-right">
               <a href="#">Forgot Password?</a>
             </div>
@@ -79,23 +89,25 @@ const Home = () => {
               join the largest <br /> political{" "}
               <span className="text-red-600">party</span> <br /> in nigeria
             </p> */}
-            <div className="flex flex-wrap justify-center mb-72">
+            <div className="flex flex-wrap justify-center mt-96 pt-12">
               <img src="/logo.png" className="w-36" alt="" />
-              <div className="flex flex-col justify-start pl-2 text-4xl font-bold text-white">
+              <div className="flex flex-col justify-start uppercase pl-2 text-4xl font-bold text-green-700">
                 <p className="md:text-left">Peoples</p>
                 <p className="md:text-left">Democratic</p>
-                <p className="md:text-left">party</p>
+                <p className="md:text-left text-red-800">party</p>
+                <p className="md:text-left text-xl">power to the people...</p>
               </div>
             </div>
           </div>
         </div>
       </main>
-      <div className="max-w-lg px-2 mt-5 text-xs text-center text-green-800 md:text-white">
-        <p className="font-semibold uppercase">Please Note:</p>
+      <div className="max-w-lg px-2 mt-5 text-xs text-green-800">
+        <p className="font-semibold uppercase text-center text-red-800">
+          Please Note:
+        </p>
         <p className="">
           Please ensure the names entered above are spelt correctly because they
-          cannot be changed once you proceed beyond this point. Click on
-          "Proceed" button below to proceed.
+          cannot be changed once you proceed beyond this point.
         </p>
       </div>
     </div>
