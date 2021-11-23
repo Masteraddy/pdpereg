@@ -12,7 +12,7 @@ const Home = () => {
     >
       <Head>
         <title>PDP Membership Registration</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/log.png" />
       </Head>
 
       <main className="container grid items-center justify-center flex-1 w-full grid-cols-1 px-3 md;px-10 lg:px-20 mx-auto text-center md:grid-cols-2">
