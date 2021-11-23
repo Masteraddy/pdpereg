@@ -49,12 +49,12 @@ const Home = () => {
             </h2>
             <input
               type="text"
-              className="w-60 p-2 mb-4 border-b border-gray-400 text-center uppercase text-sm outline-none focus:bg-green-200"
+              className="w-60 p-2 mb-4 border-b border-gray-400 text-center uppercase outline-none focus:bg-green-200"
               placeholder="Username/Phone Number"
             />
             <input
               type="password"
-              className="w-60 p-2 mb-4 border-b border-gray-400 text-center uppercase text-sm outline-none focus:bg-green-200"
+              className="w-60 p-2 mb-4 border-b border-gray-400 text-center uppercase outline-none focus:bg-green-200"
               placeholder="Password"
             />
             <div className="align-baseline text-sm text-green-700 uppercase hover:text-red-600 text-right">

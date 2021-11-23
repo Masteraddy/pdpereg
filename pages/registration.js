@@ -1,7 +1,7 @@
 import Head from "next/head";
 // import Captcha from "demos-react-captcha";
 
-export default function Registration() {
+const Registration = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-green-600">
       <Head>
@@ -228,4 +228,6 @@ export default function Registration() {
       </div>
     </div>
   );
-}
+};
+
+export default Registration;

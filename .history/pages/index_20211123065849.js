@@ -15,7 +15,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="container grid items-center justify-center flex-1 w-full grid-cols-1 px-3 md;px-10 lg:px-20 mx-auto text-center md:grid-cols-2">
+      <main className="container grid items-center justify-center flex-1 w-72 grid-cols-1 px-3 md;px-10 lg:px-20 mx-auto text-center md:grid-cols-2">
         <div className="flex flex-col justify-center mt-5 md:hidden">
           <img src="/log.png" className="w-24 h-24 mx-auto" alt="" />
           <div className="uppercase">
