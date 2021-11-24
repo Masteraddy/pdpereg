@@ -1,5 +1,4 @@
 import Head from "next/head";
-// import Captcha from "demos-react-captcha";
 
 const Registration = () => {
   return (
@@ -15,8 +14,12 @@ const Registration = () => {
             <div className="flex flex-wrap items-center justify-center">
               <img src="/log.png" className="w-24 h-24" alt="" />
               <div>
-                <h1 className="text-xl font-bold text-green-50">Peoples Democratic party</h1>
-                <p className="text-sm font-bold text-green-50">membership management system</p>
+                <h1 className="text-xl font-bold text-green-50">
+                  Peoples Democratic party
+                </h1>
+                <p className="text-sm font-bold text-green-50">
+                  membership management system
+                </p>
               </div>
             </div>
           </div>
@@ -26,7 +29,10 @@ const Registration = () => {
             Registration
           </h1> */}
 
-          <form action="" className="max-w-lg p-5 py-10 mt-5 rounded-lg bg-green-50">
+          <form
+            action=""
+            className="max-w-lg p-5 py-10 mt-5 rounded-lg bg-green-50"
+          >
             <h2 className="mb-6 text-xl font-bold text-green-800 uppercase md:hidden">
               Person information
             </h2>
@@ -82,7 +88,8 @@ const Registration = () => {
                   </select>
                 </label>
                 <label htmlFor="" className="w-full">
-                  Date Of Birth <span className="font-bold text-green-600">*</span>
+                  Date Of Birth{" "}
+                  <span className="font-bold text-green-600">*</span>
                   <input
                     type="date"
                     className="w-full p-2 mb-4 border-b border-gray-400 outline-none focus:bg-green-200"
@@ -90,7 +97,8 @@ const Registration = () => {
                   />
                 </label>
                 <label htmlFor="">
-                  Phone Number <span className="font-bold text-green-600">*</span>
+                  Phone Number{" "}
+                  <span className="font-bold text-green-600">*</span>
                   <input
                     type="text"
                     className="w-full p-2 mb-4 border-b border-gray-400 outline-none focus:bg-green-200"
@@ -98,7 +106,8 @@ const Registration = () => {
                   />
                 </label>
                 <label htmlFor="">
-                  Phone Network <span className="font-bold text-green-600">*</span>
+                  Phone Network{" "}
+                  <span className="font-bold text-green-600">*</span>
                   <select
                     name=""
                     className="w-full p-2 mb-4 border-b border-gray-400 outline-none focus:bg-green-200"
@@ -120,7 +129,8 @@ const Registration = () => {
                   // placeholder="Upload"
                 />
                 <label htmlFor="">
-                  Year of Joining <span className="font-bold text-green-600">*</span>
+                  Year of Joining{" "}
+                  <span className="font-bold text-green-600">*</span>
                   <select
                     name=""
                     className="w-full p-2 mb-4 border-b border-gray-400 outline-none focus:bg-green-200"
@@ -162,7 +172,8 @@ const Registration = () => {
                   </select>
                 </label>
                 <label htmlFor="">
-                  Local Government <span className="font-bold text-green-600">*</span>
+                  Local Government{" "}
+                  <span className="font-bold text-green-600">*</span>
                   <select
                     name=""
                     className="w-full p-2 mb-4 border-b border-gray-400 outline-none focus:bg-green-200"
@@ -205,8 +216,8 @@ const Registration = () => {
         <div className="flex-col justify-center hidden">
           <div className="flex flex-col uppercase">
             <p className="justify-around mt-6 mb-24 text-4xl font-bold leading-none text-green-50">
-              join the largest <br /> political <span className="text-red-600">party</span> <br />{" "}
-              in nigeria
+              join the largest <br /> political{" "}
+              <span className="text-red-600">party</span> <br /> in nigeria
             </p>
             <div className="flex flex-wrap justify-center mt-24">
               <img src="/vercel.svg" className="" alt="" />
@@ -222,8 +233,9 @@ const Registration = () => {
       <div className="max-w-lg px-2 mt-5 text-xs text-center text-white">
         <p className="font-semibold uppercase">Please Note:</p>
         <p className="">
-          Please ensure the names entered above are spelt correctly because they cannot be changed
-          once you proceed beyond this point. Click on "Proceed" button below to proceed.
+          Please ensure the names entered above are spelt correctly because they
+          cannot be changed once you proceed beyond this point. Click on
+          "Proceed" button below to proceed.
         </p>
       </div>
     </div>
