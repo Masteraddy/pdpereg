@@ -6,12 +6,25 @@ import CallcenSumDashboard from "../components/CallCenSumDashboard";
 
 const Dashboard = ({ user }) => {
   if (user == "agent") {
+    return <Profilepage />;
+  }
+  if (user == "agent") {
     return <CallcenSumDashboard />;
+  }
+  if (user == "agent") {
+    return <AgentDashboard />;
   }
   if (user == "callcenter") {
     return (
       <div>
         <CallCenDashboard />
+      </div>
+    );
+  }
+  if (user == "callcenter") {
+    return (
+      <div>
+        <Profilepage />
       </div>
     );
   }
