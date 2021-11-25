@@ -1,10 +1,12 @@
 import React from "react";
 import AgentDashboard from "../components/AgentDashboard";
 import CallCenDashboard from "../components/CallCenDashboard";
+import Profilepage from "../components/Profilepage";
+import CallcenSumDashboard from "../components/CallCenSumDashboard";
 
 const Dashboard = ({ user }) => {
   if (user == "agent") {
-    return <AgentDashboard />;
+    return <Profilepage />;
   }
   if (user == "callcenter") {
     return (
