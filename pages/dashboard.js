@@ -8,10 +8,10 @@ const Dashboard = ({ user }) => {
   if (user == "agent") {
     return <Profilepage />;
   }
-  if (user == "agent") {
+  if (user == "agent1") {
     return <CallcenSumDashboard />;
   }
-  if (user == "agent") {
+  if (user == "agent2") {
     return <AgentDashboard />;
   }
   if (user == "callcenter") {
@@ -21,7 +21,7 @@ const Dashboard = ({ user }) => {
       </div>
     );
   }
-  if (user == "callcenter") {
+  if (user == "callcenter1") {
     return (
       <div>
         <Profilepage />
