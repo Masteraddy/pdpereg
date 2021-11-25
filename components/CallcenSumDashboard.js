@@ -90,7 +90,7 @@ const CallcenSumDashboard = () => {
                   </p>
                   <div className="grid grid-cols-2 gap-2 font-bold">
                     <div className="text-green-800">
-                      <h2 className="text-xs font-semibold">State</h2>
+                      <h2 className="text-xs font-semibold uppercase">State</h2>
                       <h2 className="text-2xl font-bold mb-4">Lagos</h2>
                     </div>
                     <div>
@@ -98,11 +98,11 @@ const CallcenSumDashboard = () => {
                       <h2 className="text-2xl font-bold">Ifako-Ijaye</h2>
                     </div>
                     <div>
-                      <h2 className="text-xs font-semibold">Ward</h2>
+                      <h2 className="text-xs font-semibold uppercase">Ward</h2>
                       <h2 className="text-2xl font-bold">42</h2>
                     </div>
                     <div className="">
-                      <button className="p-2 my-4 px-6 font-semibold text-white text-xs uppercase bg-green-800 rounded-sm">
+                      <button className="p-2 px-2 font-semibold text-white text-xs uppercase bg-green-800 rounded-sm">
                         Add new members
                       </button>
                     </div>
