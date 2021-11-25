@@ -38,7 +38,7 @@ const CallcenSumDashboard = () => {
         </div>
         <div className="block p-5 my-8 rounded bg-green-50 md:hidden">
           <div className="flex items-center justify-center mx-auto">
-            <img src="/profile.png" alt="" className="w-12 h-12 rounded-full" />
+            <img src="/pic.jpg" alt="" className="w-12 h-12 rounded-full" />
             <h2 className="font-bold text-center text-green-700 uppercase">
               Ahmad Bello
             </h2>
@@ -58,7 +58,7 @@ const CallcenSumDashboard = () => {
           </div>
         </div>
         <div className="flex flex-col md:flex-row">
-          <div className="flex flex-col p-2 m-2 text-sm text-green-800 md:w-1/4 lg:text-base">
+          <div className="flex flex-col p-2 m-2 text-sm text-green-800 md:w-1/4 lg:text-base mx-2">
             <p className="text-5xl font-bold text-green-800">On Going</p>
             <p className="my-4 text-green-800">Ongoing Registration</p>
             <div className="flex items-center justify-center p-2">
@@ -78,41 +78,57 @@ const CallcenSumDashboard = () => {
             </div>
           </div>
 
-          <div className="p-2 m-2 md:w-3/4">
-            <h2 className="text-center font-bold text-3xl uppercase my-36 text-green-800">
+          <div className="flex flex-col p-2 m-2 text-green-800 md:w-3/4">
+            <h2 className="text-center font-bold text-3xl uppercase">
               summary indication
             </h2>
-            <div className="p-5 mt-5 rounded-lg bg-white">
-              <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
-                <div className="flex font-bold items-left">
-                  <p className="p-4 text-sm font-bold uppercase">
+            <div className="flex flex-col md:flex-row">
+              <div className="mt-5 mr-4 px-2 rounded-lg bg-white w-full md:w-3/4">
+                <div className="text-center items-center">
+                  <p className="pb-2 text-md font-bold uppercase">
                     Resident information
                   </p>
-                  <div className="flex flex-col items-center justify-between text-green-800">
-                    <h2 className="text-xs font-semibold py-2">State</h2>
-                    <h2 className="text-3xl font-bold">Lagos</h2>
-                    <h2 className="text-xs font-semibold py-2">Ward</h2>
-                    <h2
-                      className="text-3xl
- font-bold"
-                    >
-                      42
-                    </h2>
-                  </div>
-                  <div className="flex flex-col items-center justify-center">
-                    <h2>lga</h2>
-                    <h2>ifako-ijaye</h2>
+                  <div className="grid grid-cols-2 gap-2 font-bold">
+                    <div className="text-green-800">
+                      <h2 className="text-xs font-semibold">State</h2>
+                      <h2 className="text-2xl font-bold mb-4">Lagos</h2>
+                    </div>
                     <div>
-                      <button className="p-2 my-4 px-6 font-semibold text-white bg-green-800 rounded-lg">
-                        Confirm
+                      <h2 className="uppercase text-xs font-semibold">lga</h2>
+                      <h2 className="text-2xl font-bold">Ifako-Ijaye</h2>
+                    </div>
+                    <div>
+                      <h2 className="text-xs font-semibold">Ward</h2>
+                      <h2 className="text-2xl font-bold">42</h2>
+                    </div>
+                    <div className="">
+                      <button className="p-2 my-4 px-6 font-semibold text-white text-xs uppercase bg-green-800 rounded-sm">
+                        Add new members
                       </button>
                     </div>
                   </div>
                 </div>
-                <div className="relative mt-2 font-bold text-green-800 border-green-600 md:pl-2 md:border-l">
-                  <p className="text-xs italic font-semibold uppercase">
-                    Polling Units Counts
+              </div>
+              <div className="bg-white rounded-lg p-1 mt-5 w-full md:w-2/4">
+                <div className="items-center">
+                  <p className="pb-2 text-center text-sm font-bold uppercase">
+                    polling units Counts
                   </p>
+                  <div className="flex items-center justify-center uppercase text-xs font-bold">
+                    <p className="px-2 mx-auto">Area</p>
+                    <p className="p-2">Head Count</p>
+                  </div>
+                  <div className="px-2 h-20 overflow-y-scroll">
+                    {"12345678".split("").map((val) => (
+                      <div
+                        key={val}
+                        className="flex items-center justify-center"
+                      >
+                        <p className="px-2 mx-auto">Abule Egba {val}</p>
+                        <p className="p-2">50</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
