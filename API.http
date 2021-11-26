@@ -1,0 +1,25 @@
+POST http://localhost:3000/api/user
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "calle",
+  "password": "demo",
+  "email": "calle@demo.com",
+  "user": "callcenter"
+}
+
+###
+PUT http://localhost:3000/api/user/61a0733992e892f85b653012
+Accept: application/json
+Content-Type: application/json
+
+{
+  "usertype": "callcenter"
+}
+
+###
+GET http://localhost:3000/api/user/61a062df92e892f85b652f8f
+
+###
+GET http://localhost:3000/api/user

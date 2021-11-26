@@ -1,13 +1,43 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Captcha from "demos-react-captcha";
 import Router from "next/router";
+import { signIn, useSession } from "next-auth/react";
 
 const Home = () => {
   const [captcha, setCaptcha] = useState(false);
   const [username, setUsername] = useState("");
   const [error, setError] = useState("");
+  const [loaded, setLoaded] = useState(false);
   const [password, setPassword] = useState("");
+
+  const { data, status } = useSession();
+
+  useEffect(() => {
+    if (data?.user && status !== "loading") {
+      Router.push("/dashboard");
+      return;
+    } else {
+      setLoaded(true);
+    }
+  }, [status]);
+
+  if (status == "loading") {
+    return (
+      <div className="flex items-center justify-center min-h-screen text-3xl text-green-900">
+        Loading...
+      </div>
+    );
+  }
+
+  if (!loaded) {
+    return (
+      <div className="flex items-center justify-center min-h-screen text-3xl text-green-900">
+        Loading...
+      </div>
+    );
+  }
+
   return (
     <div
       style={{ background: "url('/bg.png')", backgroundSize: "cover" }}
@@ -33,7 +63,7 @@ const Home = () => {
         <div className="flex flex-col items-center justify-center">
           <h1 className="hidden text-3xl font-bold uppercase text-green-50 md:block">Login</h1>
           <form
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
               e.preventDefault();
               // console.log(captcha);
               if (!captcha) {
@@ -41,7 +71,16 @@ const Home = () => {
                 return;
               }
               if (password != "" && username != "") {
-                Router.push(`/dashboard?username=${username}`);
+                // Router.push(`/dashboard?username=${username}`);
+                let resp = await signIn("credentials", { username, password, redirect: false });
+                // console.log(resp);
+                if (resp.error) {
+                  setError(resp.error);
+                  return;
+                }
+                if (resp.ok) {
+                  Router.push(`/dashboard`);
+                }
                 return;
               }
               setError("Please enter all required field");
@@ -112,6 +151,7 @@ const Home = () => {
                 onChange={(status) => setCaptcha(status)}
                 onRefresh={(status) => console.log(status)}
                 placeholder="Insert Captcha"
+                className="bg-gray-200"
                 length={6}
               />
             </div>

@@ -1,0 +1,36 @@
+export const users = [
+  {
+    id: 1,
+    name: "John Smith",
+    email: "jsmith@demo.com",
+    username: "jsmith",
+    password: "demo",
+    usertype: "agent",
+  },
+  {
+    id: 2,
+    name: "Jaden Cool",
+    email: "jcool@demo.com",
+    username: "jcool",
+    password: "demo",
+    usertype: "agent",
+  },
+  {
+    id: 3,
+    name: "John Agent",
+    email: "agent@demo.com",
+    username: "agent",
+    password: "demo",
+    usertype: "agent",
+    ward: "Ayedaade",
+  },
+  {
+    id: 4,
+    name: "Mr Callcenter",
+    email: "callcenter@demo.com",
+    username: "callcenter",
+    password: "demo",
+    usertype: "callcenter",
+    ward: "Ayedaade",
+  },
+];

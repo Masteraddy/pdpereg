@@ -1,30 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useSession } from "next-auth/react";
+
 import AgentDashboard from "../components/AgentDashboard";
 import CallCenDashboard from "../components/CallCenDashboard";
-import Profilepage from "../components/Profilepage";
-import CallcenSumDashboard from "../components/CallCenSumDashboard";
+import ProfilePage from "../components/ProfilePage";
+import Router from "next/router";
 
-const Dashboard = ({ user }) => {
-  if (user == "agent") {
-    return <Profilepage />;
-  }
-  if (user == "agent1") {
-    return <CallcenSumDashboard />;
-  }
-  if (user == "agent2") {
-    return <AgentDashboard />;
-  }
-  if (user == "callcenter") {
+const Dashboard = ({}) => {
+  const [user, setUser] = useState({});
+  const { data, status } = useSession({
+    required: true,
+    onUnauthenticated() {
+      Router.push("/");
+    },
+  });
+
+  useEffect(() => {
+    setUser(data?.user);
+  }, [user]);
+
+  if (status == "loading") {
     return (
-      <div>
-        <CallCenDashboard />
+      <div className="flex items-center justify-center min-h-screen text-3xl text-green-900">
+        Loading...
       </div>
     );
   }
-  if (user == "callcenter1") {
+
+  if (data && !user?.ward) {
+    console.log(user?.ward);
+    return <ProfilePage user={data?.user} onProFileUpdate={(val) => setUser(val)} />;
+  }
+
+  if (user?.usertype == "agent") {
+    return <AgentDashboard />;
+  }
+
+  if (user?.usertype == "callcenter") {
     return (
       <div>
-        <Profilepage />
+        <CallCenDashboard />
       </div>
     );
   }
