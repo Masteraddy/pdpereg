@@ -3,14 +3,13 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "username": "calle",
+  "username": "agent",
   "password": "demo",
-  "email": "calle@demo.com",
-  "user": "callcenter"
+  "email": "agent@demo.com"
 }
 
 ###
-PUT http://localhost:3000/api/user/61a0733992e892f85b653012
+PUT http://localhost:3000/api/user/61a0ae0d0390e08ea80f4f98
 Accept: application/json
 Content-Type: application/json
 

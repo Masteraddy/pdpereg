@@ -131,6 +131,19 @@ const CallcenSumDashboard = () => {
                   </div>
                 </div>
               </div>
+              <div className="bg-white">
+                <h2 className="bg-green-600 rounded-lg p-2">New Members</h2>
+                <div className="px-2 h-40 overflow-y-scroll">
+                  {"123456789".split("").map((value) => (
+                    <div className="flex py-2 border-b border-green-600">
+                      <span className="pr-1">
+                        <img src="pic.jpg" alt="" className="w-4 h-4" />
+                      </span>
+                      <span className="pl-1"> Hammed Bellow{value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
