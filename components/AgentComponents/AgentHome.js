@@ -56,8 +56,8 @@ const AgentHome = ({ onAddNew, user }) => {
           </div>
         </div>
       </div>
-      <div className="bg-white w-full md:w-2/5 mt-5 rounded-lg">
-        <h2 className="bg-green-200 rounded-lg p-2 m-2 text-center text-green-800 font-semibold">
+      <div className="bg-white w-full md:w-48 mt-5 rounded-lg">
+        <h2 className="flex items-center justify-center mx-auto bg-green-200 rounded-lg p-2 w-44 my-2 text-center text-green-800 font-semibold">
           New Members
         </h2>
         <div className="px-2 h-40 overflow-y-scroll items-center justify-center">
