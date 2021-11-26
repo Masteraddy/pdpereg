@@ -7,6 +7,10 @@ import User from "../../../models/User";
 import dbConnect from "../../../libs/dbConnect";
 
 const authConfig = NextAuth({
+  session: {
+    strategy: "jwt",
+    jwt: true,
+  },
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -43,31 +47,26 @@ const authConfig = NextAuth({
   ],
 
   callbacks: {
-    async signIn({ user, account, profile, email, credentials }) {
-      return true;
-    },
-    async redirect({ url, baseUrl }) {
-      return baseUrl;
-    },
+    // async signIn({ user, account, profile, email, credentials }) {
+    //   return true;
+    // },
+    // async redirect({ url, baseUrl }) {
+    //   return baseUrl;
+    // },
     async session({ session, user, token }) {
       const userRel = await User.findOne({ email: session.user.email }).select("-password");
       session.user = userRel;
-      // console.log(userRel);
       return session;
     },
-    async jwt({ token, user, account, profile, isNewUser }) {
-      return token;
-    },
+    // async jwt({ token, user, account, profile, isNewUser }) {
+    //   return token;
+    // },
   },
   secret: "grtyuihjbvgytuyiuojkhbgtyu678",
   jwt: {
     secret: "qwertyuiop[",
     encryption: true,
   },
-  // session: {
-  //   strategy: "jwt",
-  //   jwt: true,
-  // },
 });
 
 export default authConfig;
