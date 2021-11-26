@@ -3,7 +3,7 @@ import { useSession } from "next-auth/react";
 
 import AgentDashboard from "../components/AgentDashboard";
 import CallCenDashboard from "../components/CallCenDashboard";
-import ProfilePage from "../components/ProfilePage";
+import ProfilePage from "../components/ProfileDash";
 import Router from "next/router";
 
 const Dashboard = ({}) => {
