@@ -1,4 +1,3 @@
-import { users } from "../../../data";
 import dbConnect from "../../../libs/dbConnect";
 import User from "../../../models/User";
 
