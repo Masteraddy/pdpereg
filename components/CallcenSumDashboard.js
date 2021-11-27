@@ -26,7 +26,6 @@ const CallcenSumDashboard = () => {
           <p className="text-sm font-medium text-center">Log Out</p>
         </div>
       </div>
-
       <div className="w-full min-h-screen bg-green-100">
         <div className="mt-5 text-center uppercase">
           <h1 className="text-2xl font-bold text-green-800">
@@ -66,15 +65,12 @@ const CallcenSumDashboard = () => {
               <p className="px-2 mx-auto">Completed Enrollment</p>
               <p className="p-2 border-l border-green-600">123</p>
             </div>
-            <div className="relative p-2 rounded-lg shadow-xl h-80 bg-white">
+            <div className="relative p-2 rounded-lg shadow-xl h-20 bg-white">
               <div className="flex items-center justify-center">
                 <img src="/task1.png" alt="" className="w-8 h-8" />
                 <p className="px-2 mx-auto">Pending Enrollment</p>
                 <p className="p-2 border-l border-green-600">123</p>
               </div>
-              <a className="absolute right-2 bottom-2">
-                <img src="/arrow.png" alt="" className="w-4 h-4" />
-              </a>
             </div>
           </div>
 
@@ -148,6 +144,8 @@ const CallcenSumDashboard = () => {
           </div>
         </div>
       </div>
+      name username phone Number email password center name state localgovt ward
+      polling unit
     </div>
   );
 };
