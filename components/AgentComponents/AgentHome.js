@@ -15,22 +15,22 @@ const AgentHome = ({ onAddNew, user }) => {
             <div className="grid grid-cols-2 gap-2 font-bold">
               <div className="text-green-800">
                 <h2 className="text-xs font-semibold uppercase">State</h2>
-                <h2 className="mb-4 text-2xl font-bold">{user?.state}</h2>
+                <h2 className="mb-4 text-2xl uppercase font-bold">{user?.state}</h2>
               </div>
               <div>
                 <h2 className="text-xs font-semibold uppercase">lga</h2>
-                <h2 className="text-2xl font-bold">{user?.localgovt}</h2>
+                <h2 className="text-2xl uppercase font-bold">{user?.localgovt}</h2>
               </div>
               <div>
                 <h2 className="text-xs font-semibold uppercase">Ward</h2>
-                <h2 className="text-2xl font-bold">{user?.ward}</h2>
+                <h2 className="text-2xl uppercase font-bold">{user?.ward}</h2>
               </div>
               <div className="">
                 <button
                   onClick={() => onAddNew()}
                   className="p-2 px-2 text-xs font-semibold text-white uppercase bg-green-800 rounded-sm"
                 >
-                  Add new members
+                  Add new member
                 </button>
               </div>
             </div>
