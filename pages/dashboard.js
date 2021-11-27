@@ -27,7 +27,7 @@ const Dashboard = ({}) => {
     );
   }
 
-  if (data && !user?.ward) {
+  if (data && typeof user?.ward == "undefined") {
     console.log(user?.ward);
     return <ProfilePage user={data?.user} onProFileUpdate={(val) => setUser(val)} />;
   }

@@ -9,6 +9,7 @@
     "axios": "^0.24.0",
     "bcryptjs": "^2.4.3",
     "demos-react-captcha": "^1.0.11",
+    "idb-keyval": "^6.0.3",
     "mongoose": "^6.0.13",
     "next": "latest",
     "next-auth": "^0.0.0-pr.3217.87a21677",

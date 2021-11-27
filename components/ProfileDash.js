@@ -3,7 +3,6 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Head from "next/head";
 import Router from "next/router";
 import { useState } from "react";
-import { users } from "../data";
 
 const ProfilePage = ({ user, onProFileUpdate }) => {
   const [formData, setFormData] = useState({

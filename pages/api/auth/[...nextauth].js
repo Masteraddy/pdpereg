@@ -1,6 +1,5 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { users } from "../../../data";
 import bcrypt from "bcryptjs";
 
 import User from "../../../models/User";
@@ -21,12 +20,6 @@ const authConfig = NextAuth({
       authorize: async (credentials, req) => {
         const { username, password } = credentials;
         await dbConnect();
-        // Add logic here to look up the user from the credentials supplied
-        // const user = users.find(
-        //   (val) => val.username === credentials.username && val.password === credentials.password
-        // );
-        // const salt = await bcrypt.genSalt(10);
-        // this.password = await bcrypt.hash(this.password, salt);
 
         const user = await User.findOne({ username });
         if (!user) {

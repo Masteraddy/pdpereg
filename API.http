@@ -3,13 +3,14 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "username": "agent",
+  "username": "calle",
   "password": "demo",
-  "email": "agent@demo.com"
+  "email": "calle@demo.com",
+  "user": "callcenter"
 }
 
 ###
-PUT http://localhost:3000/api/user/61a0ae0d0390e08ea80f4f98
+PUT http://localhost:3000/api/user/61a0733992e892f85b653012
 Accept: application/json
 Content-Type: application/json
 
@@ -22,3 +23,24 @@ GET http://localhost:3000/api/user/61a062df92e892f85b652f8f
 
 ###
 GET http://localhost:3000/api/user
+
+###
+POST https://pdpereg.vercel.app/api/user
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "agent",
+  "password": "demo",
+  "email": "agent@demo.com",
+  "usertype": "agent"
+}
+
+###
+PUT https://pdpereg.vercel.app/api/user/61a07b604b82161f83b51932
+Accept: application/json
+Content-Type: application/json
+
+{
+  "usertype": "callcenter"
+}
