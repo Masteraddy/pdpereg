@@ -24,10 +24,12 @@ const AddMember = ({ onNewAdded }) => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          onNewAdded();
+          // onNewAdded();
           // Save to Index DB
-          let allDT = get("newReg");
-          set(Date.now(), formData);
+          let allDT = await get("savedMem") || [];
+          console.log(allDT);
+          allDT.push(formData);
+          set("savedMem", allDT);
         }}
         className="p-5 py-10 mt-5 rounded-lg bg-green-50"
       >
