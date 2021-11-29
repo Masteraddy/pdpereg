@@ -1,5 +1,8 @@
 import { signOut, useSession } from "next-auth/react";
 import React, { useState } from "react";
+import { useLiveQuery } from "dexie-react-hooks";
+import { db } from "../libs/clientDb";
+
 import AddMember from "./AgentComponents/AddMember";
 import AgentHome from "./AgentComponents/AgentHome";
 import DashboardSideBar from "./DashboardSideBar";
@@ -7,6 +10,7 @@ import DashboardSideBar from "./DashboardSideBar";
 const AgentDashboard = () => {
   const [addNew, setAddNew] = useState(false);
   const { data, status } = useSession();
+  const regMembers = useLiveQuery(() => db.members.toArray()) || [];
 
   if (status == "loading") {
     return (
@@ -60,7 +64,7 @@ const AgentDashboard = () => {
               <div className="flex items-center justify-center">
                 <img src="/task1.png" alt="" className="w-8 h-8" />
                 <p className="px-2 mx-auto">Pending Enrollment</p>
-                <p className="p-2 border-l border-green-600">123</p>
+                <p className="p-2 border-l border-green-600">{regMembers?.length}</p>
               </div>
               {/* <a className="absolute right-2 bottom-2">
                 <img src="/arrow.png" alt="" className="w-4 h-4" />

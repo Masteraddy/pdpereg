@@ -10,12 +10,14 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3000/api/user/61a0733992e892f85b653012
+PUT http://localhost:3000/api/user/61a062df92e892f85b652f8f
 Accept: application/json
 Content-Type: application/json
 
 {
-  "usertype": "callcenter"
+  "localgovt": "LAGOS ISLAND",
+  "state": "LAGOS",
+  "ward": "OLOSUN"
 }
 
 ###

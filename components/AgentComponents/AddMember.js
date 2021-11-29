@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { getState, getLGA, getWard, getPollingUnit } from "../../libs/handlers";
-import { set, get, update } from "idb-keyval";
+import { db } from "../../libs/clientDb";
 
 const AddMember = ({ onNewAdded }) => {
   const [formData, setFormData] = useState({
@@ -8,6 +8,7 @@ const AddMember = ({ onNewAdded }) => {
     firstname: "",
     surname: "",
     othername: "",
+    image: "",
     gender: "",
     dateofbirth: "",
     phonenumber: "",
@@ -27,28 +28,39 @@ const AddMember = ({ onNewAdded }) => {
     formerelectedposition: "",
   });
 
+  const handleImgChange = (e) => {
+    let file = e.target.files[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = (evt) => {
+      console.log(evt.target.result);
+      setFormData({ ...formData, image: evt.target.result });
+    };
+  };
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   return (
     <div className="p-5 md:w-3/4">
       <form
-        onSubmit={(e) => {
+        onSubmit={async (e) => {
           e.preventDefault();
-          // onNewAdded();
           // Save to Index DB
-          let allDT = await get("savedMem") || [];
-          console.log(allDT);
-          allDT.push(formData);
-          set("savedMem", allDT);
+          try {
+            let allDT = await db.members.add(formData);
+            if (allDT) {
+              onNewAdded();
+            }
+          } catch (error) {
+            console.error(error);
+          }
         }}
         className="p-5 py-10 mt-5 rounded-lg bg-green-50"
       >
         <div className="grid grid-cols-2 gap-2 text-xs md:grid-cols-3">
           <div className="text-left">
-            <h2 className="mb-4 text-xs font-bold text-green-800 uppercase">
-              Person information
-            </h2>
+            <h2 className="mb-4 text-xs font-bold text-green-800 uppercase">Person information</h2>
             <label htmlFor="" className="w-full">
               Title <span className="font-bold text-green-600">*</span>
               <select
@@ -158,16 +170,24 @@ const AddMember = ({ onNewAdded }) => {
             </label>
           </div>
           <div className="text-left">
-            <img src="/profile.png" className="h-36 w-28" alt="" />
-            <input
-              type="file"
-              className="w-full p-2 mb-4 border border-gray-600 rounded-md outline-none focus:bg-green-50"
-              // required
-              // placeholder="Upload"
-            />
+            <label htmlFor="file">
+              <img
+                src={formData.image == "" ? "/profile.png" : formData.image}
+                className="h-36 w-28"
+                alt=""
+              />
+              <input
+                type="file"
+                className="w-full p-2 mb-4 border border-gray-600 rounded-md outline-none focus:bg-green-50"
+                required
+                name="image"
+                onChange={(e) => handleImgChange(e)}
+
+                // placeholder="Upload"
+              />
+            </label>
             <label htmlFor="">
-              Year of Joining{" "}
-              <span className="font-bold text-green-600">*</span>
+              Year of Joining <span className="font-bold text-green-600">*</span>
               <input
                 type="number"
                 name="yearofjoining"
@@ -213,8 +233,7 @@ const AddMember = ({ onNewAdded }) => {
               </select>
             </label>
             <label htmlFor="">
-              Local Government{" "}
-              <span className="font-bold text-green-600">*</span>
+              Local Government <span className="font-bold text-green-600">*</span>
               <select
                 name="localgovt"
                 className="w-full p-2 mb-4 border border-gray-600 rounded-md outline-none focus:bg-green-50"
@@ -270,8 +289,7 @@ const AddMember = ({ onNewAdded }) => {
               </select>
             </label>
             <label htmlFor="">
-              Local Government{" "}
-              <span className="font-bold text-green-600">*</span>
+              Local Government <span className="font-bold text-green-600">*</span>
               <select
                 name="votinglocalgovt"
                 className="w-full p-2 mb-4 border border-gray-600 rounded-md outline-none focus:bg-green-50"
@@ -297,13 +315,11 @@ const AddMember = ({ onNewAdded }) => {
                 value={formData.votingward}
               >
                 <option value="">Please Select</option>
-                {getWard(formData.votingstate, formData.votinglocalgovt).map(
-                  (val) => (
-                    <option value={val} key={val}>
-                      {val}
-                    </option>
-                  )
-                )}
+                {getWard(formData.votingstate, formData.votinglocalgovt).map((val) => (
+                  <option value={val} key={val}>
+                    {val}
+                  </option>
+                ))}
               </select>
             </label>
             <label htmlFor="">
@@ -341,8 +357,7 @@ const AddMember = ({ onNewAdded }) => {
               />
             </label>
             <label htmlFor="" className="w-full">
-              Contact Address{" "}
-              <span className="font-bold text-green-600">*</span>
+              Contact Address <span className="font-bold text-green-600">*</span>
               <input
                 type="text"
                 name="contactaddress"
