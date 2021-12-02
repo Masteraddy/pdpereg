@@ -2,7 +2,7 @@ import { signOut, useSession } from "next-auth/react";
 import React from "react";
 import DashboardSideBar from "./DashboardSideBar";
 
-const CallCenDashboard = () => {
+const CallCenDashboard = ({ user }) => {
   const { data, status } = useSession();
 
   if (status == "loading") {
@@ -15,7 +15,7 @@ const CallCenDashboard = () => {
 
   return (
     <div className="flex">
-      <DashboardSideBar signOut={() => signOut()} user={data?.user} />
+      <DashboardSideBar signOut={() => signOut()} user={user} />
 
       <div className="w-full min-h-screen bg-green-100">
         <div className="mt-5 text-center uppercase">
@@ -65,7 +65,7 @@ const CallCenDashboard = () => {
               <div className="flex flex-col items-center justify-center font-bold">
                 <div className="h-64 px-2 overflow-y-scroll">
                   {"123456789".split("").map((value) => (
-                    <div className="flex py-2 border-b border-green-600">
+                    <div key={value} className="flex py-2 border-b border-green-600">
                       <span className="pr-1"> {value}</span>
                       <span className="pl-1 border-l border-green-600"> Hammed Bellow</span>
                     </div>

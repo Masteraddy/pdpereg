@@ -7,7 +7,7 @@ import AddMember from "./AgentComponents/AddMember";
 import AgentHome from "./AgentComponents/AgentHome";
 import DashboardSideBar from "./DashboardSideBar";
 
-const AgentDashboard = () => {
+const AgentDashboard = ({ user }) => {
   const [addNew, setAddNew] = useState(false);
   const { data, status } = useSession();
   const regMembers = useLiveQuery(() => db.members.toArray()) || [];
@@ -22,7 +22,7 @@ const AgentDashboard = () => {
 
   return (
     <div className="flex">
-      <DashboardSideBar signOut={() => signOut()} user={data?.user} />
+      <DashboardSideBar signOut={() => signOut()} user={user} />
 
       <div className="w-full min-h-screen bg-green-100">
         <div className="mt-5 text-center uppercase">
